@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: antiquewhite;
+                display:inline-block;
+            }
+        </style>
+    <script>
+        var a=6; // var variable global scope 
+        function validate()
+        {
+            let a=5;// let variable loop scope
+            const c=8;// cannot change the value of c
+            document.getElementById('signin').innerHTML=a+c;
+        }
+        
+    </script>
+        <p id="demo"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+    <script>
+    var hello,arrowp;
+    hello = () => {    //demostration of arrow function without parameters
+      return "Hello World!";
+    }
+    document.getElementById("demo").innerHTML = hello();
+
+    arrowp=(abc)=>{    //demonstration of arroq function with parameters.
+        return abc+"janani";
+    }
+    document.getElementById("demo2").innerHTML = arrowp("Hello ");
+    var dparam;
+    dparam=(x,y=10)=>{  //arrow function and default parameters
+        return x+y;
+    }
+    document.getElementById("demo3").innerHTML = dparam(5);
+    document.getElementById("demo4").innerHTML = dparam(5,6);
+    </script>
+    <p id="restparameters"></p>
+    <script>
+        var restp=(...args)=> // arrow function and rest parameters.
+        {
+            let sum=0;
+            for(let x of args) sum+=x;
+            return sum;
+        }
+        document.getElementById("restparameters").innerHTML = restp(8,5,2,4,6,1);
+        const arr1=[1,2,3,4];
+        const arr2=[...arr1,5,6,7];   // working of spread operator 
+        console.log(arr2);
+    </script>
+    </head>
+    <body>
+        <p id="demo"></p>
+        /*<label for="name">User Name</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="pwd">password</label>
+        <input type="password" id="pwd" name="pwd" ><br>*/
+        <p id="signin"></p>
+        <button type="button" onclick="validate()" >click me!</button>
+    
+    </body>
+</html>
